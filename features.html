@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteNest</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Georgia:wght@400;600&display=swap'); /* Georgia is generally available by default in most systems, no need for @import */
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            width: 100%;
+        }
+        .feature {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #333;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            background-color: #f0f4f8;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+        .feature p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .blue .icon { color: #4169E1; }
+        .yellow .icon { color: #FFA500; }
+        .orange .icon { color: #FF4500; }
+        .green .icon { color: #32CD32; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="feature blue">
+            <div class="icon">📚</div>
+            <p>Free access to notes and previous year questions</p>
+        </div>
+        <div class="feature yellow">
+            <div class="icon">🔍</div>
+            <p>Search notes by course or topics</p>
+        </div>
+        <div class="feature orange">
+            <div class="icon">📤</div>
+            <p>Want to help others? Upload your notes!</p>
+        </div>
+        <div class="feature green">
+            <div class="icon">🖨️</div>
+            <p>Submit print requests and collect them from a nearby store</p>
+        </div>
+    </div>
+</body>
+</html>
