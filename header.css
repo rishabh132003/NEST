@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Rubik+Vinyl&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 /* General Navbar Styling */
 nav .container-fluid {
     padding: 0 50px; /* Add padding directly to the container */
@@ -139,6 +142,102 @@ nav .container-fluid {
     height: auto; /* Maintain aspect ratio */
 }
 
+/* Cards */
+.feature {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    max-width: 250px; /* Ensure cards don't exceed this width */
+    height: 250px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 60px rgb(235, 235, 235), -5px -5px 60px rgb(237, 237, 237);
+    border-radius: 15px;
+    transition: all 2s;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    flex-direction: column;
+    text-align: center;
+    color: #333;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* To position the circles inside the feature card */
+}
+
+.icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    background-color: #f0f4f8;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    z-index: 2;
+    line-height: 80px;
+}
+
+.feature:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.feature:hover .icon {
+    color: white; /* Change icon color on hover */
+    position: relative;
+}
+
+/* Circle animation */
+.circle2 {
+    position: absolute;
+    margin: auto;
+    margin-top: -50px;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(245, 229, 213, 0.564);
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+
+.feature:hover .circle2 {
+    margin-top: 0px;
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    transition: all 0.5s;
+    z-index: 1;
+}
+
+.feature p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    z-index: 2;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 2 cards per row */
+    gap: 25px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto; /* Center the grid */
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        flex-direction: column;
+    }
+}
+
 /* Responsive Styling for Different Screen Sizes */
 
 @media (max-width: 768px) {
@@ -160,13 +259,34 @@ nav .container-fluid {
     .search-bar .search-button i{
         font-size: 25px;
     }
+
+    /* cards */
+    .feature {
+        max-width: 200px; /* Adjust card size on smaller screens */
+        height: 200px;
+        padding: 20px;
+    }
+    
+    .icon {
+        font-size: 40px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .feature p {
+        font-size: 14px;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* 425px and below */
 @media (max-width: 425px) {
     .hero-section {
         padding: 0px; /* Adjust padding */
-        margin: 0px; /* Adjust margin */
+        margin: 0 0 30px 0; /* Adjust margin */
         border-radius: 0px;
     }
 
@@ -201,6 +321,26 @@ nav .container-fluid {
         font-size: 15px;
     }
     
+    /* cards */
+    .feature {
+        max-width: 180px; /* Further adjust card size */
+        height: 180px;
+        padding: 15px;
+    }
+
+    .icon {
+        font-size: 36px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .feature p {
+        font-size: 13px;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr; /* 1 card per row */
+    }
 }
 
 /* 375px and below */
@@ -217,13 +357,29 @@ nav .container-fluid {
         max-width: 250px; /* Adjust search bar width */
     }
 
+    /* cards */
+    .feature {
+        max-width: 160px; /* Further adjust card size */
+        height: 160px;
+        padding: 10px;
+    }
+
+    .icon {
+        font-size: 32px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .feature p {
+        font-size: 12px;
+    }
 }
 
 /* 320px and below */
 @media (max-width: 320px) {
     .hero-section {
         padding: 60px 5px; /* Adjust padding */
-        margin: 0; /* Remove margin */
+        margin: 0 0 30px 0; /* Remove margin */
     }
 
     .hero-section h1 {
@@ -238,4 +394,20 @@ nav .container-fluid {
         display: none; /* Hide search bar */
     }
 
+    /* cards */
+    .feature {
+        max-width: 140px; /* Further adjust card size */
+        height: 140px;
+        padding: 5px;
+    }
+
+    .icon {
+        font-size: 28px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .feature p {
+        font-size: 11px;
+    }
 }
