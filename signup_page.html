@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Signup Page</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                color: #333;
+            }
+            form {
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                max-width: 500px;
+                width: 90%;
+                padding: 30px;
+                box-sizing: border-box;
+                color: #333;
+                text-align: left;
+            }
+            h1 {
+                color: #6a1b9a;
+                margin-bottom: 20px;
+                font-size: 24px;
+                text-align: center;
+            }
+            label {
+                display: block;
+                font-size: 16px;
+                margin-bottom: 8px;
+                color: #6a1b9a;
+            }
+            input[type=text], input[type=email], input[type=number], input[type=password] {
+                width: calc(100% - 24px);
+                font-size: 16px;
+                margin-bottom: 16px;
+                padding: 12px;
+                border-radius: 5px;
+                border: 1px solid #ddd;
+                background: #f9f9f9;
+                color: #333;
+                box-sizing: border-box;
+                outline: none;
+                transition: border-color 0.3s;
+            }
+            input[type=text]:focus, input[type=email]:focus, input[type=number]:focus, input[type=password]:focus {
+                border-color: #6a1b9a;
+            }
+            button {
+                background-color: #6a1b9a;
+                color: white;
+                border: none;
+                padding: 15px;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                width: 100%;
+                transition: background-color 0.3s;
+            }
+            button:hover {
+                background-color: #8e24aa;
+            }
+            a {
+                color: #6a1b9a;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            .container {
+                padding: 20px;
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            .imgcontainer {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            img.avatar {
+                width: 120px;
+                border-radius: 50%;
+                border: 3px solid #6a1b9a;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="#" method="post">
+            {% csrf_token %}
+            {% load static %}
+            <div class="container">
+                <div class="imgcontainer">
+                    <img src="{% static 'avatar_img2.png' %}" alt="Avatar" class="avatar">
+                </div>
+                <h1>Register Form</h1>
+                <label for='name'><b>Name:</b></label>
+                <input type='text' placeholder="Enter your name" name='name' required>
+                
+                <label for='email'><b>Email Id:</b></label>
+                <input type="email" placeholder="Enter email" name="email" required>
+                
+                <label for='password'><b>Password:</b></label>
+                <input type="password" placeholder="Enter password" name="password" required>
+                
+                <label for='phonenumber'><b>Phone Number:</b></label>
+                <input type="text" placeholder="Enter phone number" name="phonenumber">
+                
+                <label for='branch'><b>Branch:</b></label>
+                <input type="text" placeholder="Enter branch" name="branch">
+                
+                <label for='semester'><b>Semester:</b></label>
+                <input type="number" placeholder="Enter semester" name="semester">
+                
+                <label for='year'><b>Year:</b></label>
+                <input type="number" placeholder="Enter year" name="year">
+                
+                <button type="submit"><b>Signup</b></button>
+                <p style="margin-top: 15px; text-align: center;">Already have an account? <a href="http://localhost:8000/login/">Login</a></p>
+            </div>
+        </form>
+    </body>
+</html>
